@@ -34,6 +34,7 @@ brew 'wget'
 
 # Apps
 cask 'alfred'
+cask 'atom'
 cask 'caffeine'
 cask 'google-chrome'
 cask 'iterm2'

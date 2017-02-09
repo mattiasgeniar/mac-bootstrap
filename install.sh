@@ -16,3 +16,11 @@ brew bundle --file=conf.d/Brewfile
 
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
+
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# If there's no zshrc file yet, copy the default
+if [ ! -f ~/.zshrc ]; then
+  wget https://raw.githubusercontent.com/mattiasgeniar/dotfiles/master/zsh/zshrc -O ~/.zshrc
+fi
