@@ -1,0 +1,52 @@
+# Taps
+tap 'caskroom/cask'
+tap 'caskroom/fonts'
+tap 'caskroom/versions'
+tap 'homebrew/bundle'
+tap 'homebrew/dupes'
+tap 'homebrew/php'
+
+# Install ZSH
+brew 'zsh'
+brew 'zsh-completions'
+
+# Install GNU core utilities (those that come with macOS are outdated)
+brew 'coreutils'
+
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+brew 'findutils'
+
+# Install Bash 4
+brew 'bash'
+
+# Install more recent versions of some macOS tools
+brew 'homebrew/dupes/grep'
+
+# Install Binaries
+brew 'awscli'
+brew 'git'
+brew 'hub'
+brew 'tree'
+brew 'mackup'
+brew 'mas'
+brew 'node'
+brew 'wget'
+
+# Apps
+cask 'alfred'
+cask 'caffeine'
+cask 'google-chrome'
+cask 'iterm2'
+cask 'vagrant'
+cask 'virtualbox'
+cask 'virtualbox-extension-pack'
+cask 'vlc'
+
+# Install Mac App Store apps
+mas '1Password', id: 443987910
+mas 'Sketch', id: 402476602
+mas 'Tweetbot', id: 557168941
+mas 'Microsoft Remote Desktop', id: 715768417
+mas 'Xcode', id: 497799835
+mas 'BetterSnapTool', id: 417375580
+mas 'Coca', id: 1000808993
