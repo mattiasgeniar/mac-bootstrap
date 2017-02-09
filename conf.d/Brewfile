@@ -44,8 +44,6 @@ cask 'vlc'
 
 # Install Mac App Store apps
 mas '1Password', id: 443987910
-mas 'Sketch', id: 402476602
-mas 'Tweetbot', id: 557168941
 mas 'Microsoft Remote Desktop', id: 715768417
 mas 'Xcode', id: 497799835
 mas 'BetterSnapTool', id: 417375580
