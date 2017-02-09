@@ -32,6 +32,7 @@ brew 'mas'
 brew 'node'
 brew 'wget'
 brew 'htop'
+brew 'hostess'
 
 # Apps
 cask 'alfred'
