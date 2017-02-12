@@ -54,6 +54,7 @@ cask 'vagrant'
 cask 'virtualbox'
 cask 'virtualbox-extension-pack'
 cask 'vlc'
+cask 'skype'
 
 # Install Mac App Store apps
 mas '1Password', id: 443987910
