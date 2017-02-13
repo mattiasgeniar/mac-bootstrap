@@ -1,0 +1,54 @@
+
+install_ruby_version(){
+  if $(rbenv versions | grep 2.1.9 > /dev/null)  ; then
+    echo 'Looks like you already have ruby 2.1.9'
+  else
+    rbenv install 2.1.9
+    rbenv rehash
+    rbenv local 2.1.9
+    gem install bundler
+    rbenv rehash
+  fi
+  rbenv local 2.1.9
+  rbenv rehash
+}
+
+
+install_rbenv_binstubs (){
+  if [ -d ~/.rbenv/plugins/rbenv-binstubs ] ; then
+    echo "Looks like you already have rbenv-bunstubs already installed, so doing nothing"
+  else
+    git clone https://github.com/ianheggie/rbenv-binstubs.git ~/.rbenv/plugins/rbenv-binstubs
+  fi
+}
+
+install_rbenv_build(){
+  if [ -d ~/.rbenv/plugins/ruby-build ] ; then
+    echo "Looks like you already have rbenv-build, so doing nothing"
+  else
+    git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+  fi
+  install_ruby_version
+}
+
+install_rbenv(){
+  if [ -d ~/.rbenv ] ; then
+    echo "Looks like you already have rbenv, so doing nothing"
+  else
+    git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+    cd ~/.rbenv && src/configure && make -C src
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+    echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+    echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+    eval "$(rbenv init -)"
+  fi
+  install_rbenv_build
+}
+
+git_config(){
+ git config --global push.default current
+}
+
+
