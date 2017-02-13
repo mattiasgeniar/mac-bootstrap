@@ -31,3 +31,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 install_rbenv
 install_rbenv_binstubs
 git_config
+
+# Install the vbguest Vagrant plugin
+vagrant plugin install vagrant-vbguest
