@@ -1,5 +1,7 @@
 #!/bin/sh
 
+source conf.d/install_functions
+
 echo "Setting up your Mac..."
 
 # Check for Homebrew and install if we don't have it
@@ -24,3 +26,8 @@ fi
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Setup a ruby env
+install_rbenv
+install_rbenv_binstubs
+git_config
