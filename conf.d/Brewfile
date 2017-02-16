@@ -45,6 +45,7 @@ brew 'watch'
 brew 'tree'
 
 # Apps
+cask '1password'
 cask 'alfred'
 cask 'atom'
 cask 'caffeine'
@@ -57,7 +58,6 @@ cask 'vlc'
 cask 'skype'
 
 # Install Mac App Store apps
-mas '1Password', id: 443987910
 mas 'Microsoft Remote Desktop', id: 715768417
 mas 'Xcode', id: 497799835
 mas 'BetterSnapTool', id: 417375580

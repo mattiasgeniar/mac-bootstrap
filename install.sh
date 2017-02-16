@@ -2,7 +2,22 @@
 
 source conf.d/install_functions
 
+# sudo keepalive
+startsudo() {
+    sudo -v
+    ( while true; do sudo -v; sleep 60; done; ) &
+    SUDO_PID="$!"
+    trap stopsudo SIGINT SIGTERM
+}
+stopsudo() {
+    kill "$SUDO_PID"
+    trap - SIGINT SIGTERM
+    sudo -k
+}
+
 echo "Setting up your Mac..."
+
+startsudo
 
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
@@ -34,3 +49,5 @@ git_config
 
 # Install the vbguest Vagrant plugin
 vagrant plugin install vagrant-vbguest
+
+stopsudo
